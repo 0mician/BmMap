@@ -20,3 +20,11 @@ echo "Starting merge of R2 (this may take a while)"
 cat ${STRAIN_ID}_L{1..4}R2.fastq > ${STRAIN_ID}_R2.fastq
 echo "Done merge"
 
+# optional: to verify if it went ok (both number should be the same)
+R1=`wc -l ${STRAIN_ID}_R1.fastq`
+R2=`wc -l ${STRAIN_ID}_R2.fastq`
+
+if [ R1 -ne R2 ]; then
+    echo "Paired-end files should have the same length"
+fi
+
