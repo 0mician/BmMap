@@ -18,7 +18,7 @@ bwa sampe $REFERENCE \
 
 # creation of binary alignment file (bam)
 samtools view -Sb -o ${STRAIN_ID}.bam ${STRAIN_ID}.sam
-samtools sort ${STRAIN_ID}.bam -o ${STRAIN_ID}.bam.sorted
+samtools sort ${STRAIN_ID}.bam -o ${STRAIN_ID}.sorted.bam
 samtools index ${STRAIN_ID}.sorted.bam
 
 # get some stats about the reads mapped
